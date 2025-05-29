@@ -4,8 +4,8 @@ entorno/
 # .env
 *.env
 
-# los logs
-logs/
+# los logs 
+# logs/
 
 # archivos compilados de python
 __pycache__/
