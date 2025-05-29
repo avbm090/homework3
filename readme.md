@@ -35,7 +35,7 @@ El sistema está diseñado para ser modular, eficiente y escalable, utilizando p
 
 **`/raíz del proyecto/`**: 
 - *`API.py`*: Script que implementa una API para realizar consultas de registros por salas y rango de fechas, esta opción se agregó como un plus y funciona de manera paralela al main. Por falta de tiempo, solo se hicieron estos dos endpoints mencionados.
-- **`Main.py`**
+- *`Main.py`*: Contiene la estructura principal para la interacción con el usuario, el diseño es simple ys e visualiza por consola. Permite seleccionar el tipo de informe que se desea crear y también la posibilidad de realizar dos tipos de consultas.
 
 ## Requisitos
 
