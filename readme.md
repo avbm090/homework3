@@ -14,7 +14,7 @@ El sistema está diseñado para ser modular, eficiente y escalable, utilizando p
 
 ## Características
 
-- **Lectura y validación de logs**: Se implementa un parser con pandas para cambiar el formato a dataframe o json.
+- **Lectura y logs**: Se implementa un **parser** utilizando **pandas** para convertir los datos a un formato **DataFrame** o **JSON**, facilitando su manipulación y exportación. Además, el sistema de **registro de logs** utiliza la librería **logging**, que permite registrar eventos importantes del sistema y guardarlos en un archivo de texto (.txt).
 - **Caché temporal**: Los datos se almacenan en memoria para una rápida consulta de los últimos registros de sensores (con ventana de 5 minutos).
 - **Reportes**: Se generan reportes de estado por sala, alertas críticas, y consultas de registros por sala y rango de fechas. La solución es extensible para añadir más tipos de reportes en el futuro.
 - **Modularidad**: El sistema está diseñado de manera modular para facilitar su mantenimiento y ampliación.
@@ -69,3 +69,24 @@ Instalación de librerías:
 
 En powershell o bash,
 pip install -r requirements.txt
+
+  #### **Ejecución**:
+  Se corre el archivo main.py para interfaz por consola o el archivo API.py en local para ver la API. 
+
+
+  ## Mejoras
+
+Aunque el proyecto está en su versión actual, **quedaron pendientes varias mejoras** que podrían haberse implementado con más tiempo:
+
+1. **Agregar más endpoints a la API:**
+   - Se planeaba añadir al menos dos endpoints más a la API, que generen lso reportes, así como se hace en main.py. 
+
+2. **Crear una base de datos con MySQL:**
+   - En lugar de almacenar la información en el mismo formato que lo recibimoss (csv), se había considerado implementar una **base de datos MySQL**. 
+   - Esto se hubiera hecho creando tablas con **MySQL Workbench**, lo que permitiría una gestión más robusta y escalable de los datos.
+
+3. **Integración con variables de entorno:**
+   - **Configuración de la conexión a la base de datos:** Se habría configurado la conexión a MySQL utilizando variables de entorno para asegurar que las credenciales y configuraciones no estuvieran expuestas en el código.
+   - Las variables de entorno habrían sido almacenadas en un archivo `.env`, para mantener la seguridad y flexibilidad de la configuración de la aplicación.
+
+
