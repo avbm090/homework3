@@ -21,9 +21,9 @@ El sistema está diseñado para ser modular, eficiente y escalable, utilizando p
 
 ## Estructura del Proyecto
 
-- **`/data/`**: Carpeta que contiene los archivos de datos, caché y los logs de los sensores. Estos archivos se muestran por vez excepcional, ya que son utilizados como parte de la tarea (homework).
+- **`/data/`**: Carpeta que contiene los archivos de datos, caché y los logs de los sensores. **Estos archivos se muestran por vez excepcional**, ya que son utilizados como parte de la tarea (homework).
   
-- **`/jsons/`**: Carpeta que contiene los informes y resultados de las consultas, tanto de reportes generados como de consultas por fecha o por sala. Estos archivos se guardan en formato **JSON** para persistir la información de manera estructurada. Esto también se muestra de manera excepcional a fin de mostrar el labor realizado en la homework.
+- **`/jsons/`**: Carpeta que contiene los informes y resultados de las consultas hechas desde la API, tanto de reportes generados como de consultas por fecha o por sala. Estos archivos se guardan en formato **JSON** para persistir la información de manera estructurada. **Esto también se muestra de manera excepcional a fin de mostrar el labor realizado en la homework**.
 
 - **`/reportes/`**: Carpeta que contiene las clases responsables de generar los reportes. Los reportes se implementan utilizando una combinación de los patrones **Factory** y **Strategy**.
 
