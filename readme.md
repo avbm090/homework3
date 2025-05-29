@@ -35,7 +35,14 @@ El sistema está diseñado para ser modular, eficiente y escalable, utilizando p
 
 **`/raíz del proyecto/`**: 
 - *`API.py`*: Script que implementa una API para realizar consultas de registros por salas y rango de fechas, esta opción se agregó como un plus y funciona de manera paralela al main. Por falta de tiempo, solo se hicieron estos dos endpoints mencionados.
+   - Consultas por salas utiliza el método get, esto es porque se quieren recuperar los datos sin modificar el estado del servidor.
+   - Consultas entre rango de fechas utiliza un método post, dado que es necesario enviar un json con parámetros específicos para la consulta (en este caso, el rango de fechas para la búsqueda)
 - *`Main.py`*: Contiene la estructura principal para la interacción con el usuario, el diseño es simple ys e visualiza por consola. Permite seleccionar el tipo de informe que se desea crear y también la posibilidad de realizar dos tipos de consultas.
+  - En este archivo primero se cargan las variables de entorno, se parsea la tabla de la bbdd (en este caso el archivo de la tarea), se genera una instancia de la clase creada Cache con el archivo parseado. Una vez hecho esto, se permite la posibilidad e seleccionar la opción del menú por consola.
+      - Opción 1: Trae el informe de cantidad de tipos de estados por sala, utilizando el método ReporteFactory.crear_reporte() de Factory, una vez instanciado, se aplica el método .generar() de strategy.Para el tipo de informe seleccionado, strategy utiliza AlertasCriticas(Strategy), es decir una clase que hereda de la calse abstracta generar(). En resumen, se utiliza factory para crear los objetos nuevos  (los informes) teniendo en cuenta el método (acá es donde se combina con strategy) para el tipo de reporte seleccionado.
+      - Opción 2: Similar a la opción 1, pero cuando se instancia generar() se utiliza internamente AlertasCriticas(Strategy) para el informe de cantidad e alertas críticas.
+      - Opción 3: Realiza una consulta de registros por sala.
+      - Opción 4: Realiza una consulta de registros por rango de fechas. El formato ingresado debe ser del tipo yyyy-mm-ddTHH:MM:SS.
 
 ## Requisitos
 
