@@ -2,7 +2,7 @@
 
 ## Descripción
 
-Este proyecto es parte de una solución para **EcoWatch**, una empresa de monitoreo ambiental. La solución procesa y gestiona datos generados por sensores ambientales ubicados en distintas ciudades. El sistema recibe datos de temperatura, humedad y niveles de CO2 cada minuto y los procesa para generar reportes diarios, detectar anomalías y tomar decisiones operativas en tiempo real.
+Este proyecto es parte de una homework, se porpone una solución para una empresa ficticia **EcoWatch**, de monitoreo ambiental. La solución procesa y gestiona datos generados por sensores ambientales ubicados en distintas ciudades. El sistema recibe datos de temperatura, humedad y niveles de CO2 cada minuto y los procesa para generar reportes diarios, detectar anomalías y tomar decisiones operativas en tiempo real.
 
 El sistema está diseñado para ser modular, eficiente y escalable, utilizando principios de programación orientada a objetos.
 
