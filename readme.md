@@ -40,10 +40,10 @@ Archivos principales en **`/homework3/`**:
    - Consultas por salas: La consulta por sala utiliza el método GET, ya que sólo recupera datos sin modificar el estado del servidor.
    - Consultas entre rango de fechas: La consulta por rango de fechas utiliza el método POST, porque se envía un JSON con parámetros específicos (el rango de fechas) para realizar la búsqueda.
 - *`Main.py`*: Contiene la estructura principal. Acá es donde se selecciona el tipo de informe a través de una interfaz por consola. Principalemnte lo que se hace en este archivo es:
-  1. Se cargan las *variables de entorno*.
-  2. Se *parsea* la tabla de la base de datos (en este caso, el archivo de la tarea).
-  3. Se genera una instancia de la clase *Cache* con el archivo ya parseado.
-  4. Se muestra *menú por consola*, con las opciones para seleccionar el *tipo de informe* o *consulta*.
+  1. Se cargan las **variables de entorno**.
+  2. Se **parsea** la tabla de la base de datos (en este caso, el archivo de la tarea).
+  3. Se genera una instancia de la clase **Cache** con el archivo ya parseado.
+  4. Se muestra **menú por consola**, con las opciones para seleccionar el **tipo de informe** o **consulta**.
   
   Cabe aclarar que, para cada una de las opciones, siempre se recurre al **caché en memoria primero**. Es decir, la instancia del caché se crea una sola vez fuera del bucle principal (while) antes que el usuario 
   seleccione alguna opción. Cuando el usuario elige una opción, recién ahí se carga el caché.
