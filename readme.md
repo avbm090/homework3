@@ -21,9 +21,11 @@ El sistema está diseñado para ser modular, eficiente y escalable, utilizando p
 
 ## Estructura del Proyecto
 
-- **`/data/`**: Carpeta que contiene los archivos de datos, caché y los logs de los sensores. Estos archivos se muestran por vez excepcional, ya que son utilizados como parte de la tarea (homework).
+- **`/data/`**: Carpeta que contiene los archivos de datos, caché y los logs de los sensores. **Estos archivos se muestran por vez excepcional**, ya que son utilizados como parte de la tarea (homework).
   
-- **`/jsons/`**: Carpeta que contiene los informes y resultados de las consultas, tanto de reportes generados como de consultas por fecha o por sala. Estos archivos se guardan en formato **JSON** para persistir la información de manera estructurada. Esto también se muestra de manera excepcional a fin de mostrar el labor realizado en la homework.
+- **`/jsons/`**: Carpeta que contiene los informes y resultados de las consultas hechas desde la API, tanto de reportes generados como de consultas por fecha o por sala. Estos archivos se guardan en formato **JSON** para persistir la información de manera estructurada. **Esto también se muestra de manera excepcional a fin de mostrar el labor realizado en la homework**.
+
+- **`/logs/`**: Carpeta donde se almacenan lso registros generados por la aplicación. Genera un registro en formatos .txt. Tipos: 'INFO' para eventos informativos, 'WARNING' para advertencias y 'ERROR' para situaciones que requieren corrección. **Estos archivos se muestran por vez excepcional**.
 
 - **`/reportes/`**: Carpeta que contiene las clases responsables de generar los reportes. Los reportes se implementan utilizando una combinación de los patrones **Factory** y **Strategy**.
 
@@ -33,15 +35,15 @@ El sistema está diseñado para ser modular, eficiente y escalable, utilizando p
 
 - **`/validador/`**: Implementa el validador de los logs para rastrear posibles cceldas con valores nulos, esto es externo al main y a la API.
 
-**`/raíz del proyecto/`**: 
+Archivos principales en **`/homework3/`**: 
 - *`API.py`*: Script que implementa una API para realizar consultas de registros por salas y rango de fechas, esta opción se agregó como un plus, y funciona de manera paralela al main. Por falta de tiempo, solo se hicieron estos dos endpoints mencionados.
    - Consultas por salas: La consulta por sala utiliza el método GET, ya que sólo recupera datos sin modificar el estado del servidor.
    - Consultas entre rango de fechas: La consulta por rango de fechas utiliza el método POST, porque se envía un JSON con parámetros específicos (el rango de fechas) para realizar la búsqueda.
-- **`Main.py`**: Contiene la estructura principal. Acá es donde se selecciona el tipo de informe a través de una interfaz por consola. Principalemnte lo que se hace en este archivo es:
-  1. **Cargar las variables de entorno**.
-  2. **Parsear la tabla de la base de datos** (en este caso, el archivo de la tarea).
-  3. **Generar una instancia de la clase `Cache`** con el archivo ya parseado.
-  4. **Desplegar el menú por consola** con las opciones para seleccionar el tipo de informe o consulta a realizar.
+- *`Main.py`*: Contiene la estructura principal. Acá es donde se selecciona el tipo de informe a través de una interfaz por consola. Principalemnte lo que se hace en este archivo es:
+  1. Se cargan las **variables de entorno**.
+  2. Se **parsea** la tabla de la base de datos (en este caso, el archivo de la tarea).
+  3. Se genera una instancia de la clase **Cache** con el archivo ya parseado.
+  4. Se muestra **menú por consola**, con las opciones para seleccionar el **tipo de informe** o **consulta**.
   
   Cabe aclarar que, para cada una de las opciones, siempre se recurre al **caché en memoria primero**. Es decir, la instancia del caché se crea una sola vez fuera del bucle principal (while) antes que el usuario 
   seleccione alguna opción. Cuando el usuario elige una opción, recién ahí se carga el caché.
