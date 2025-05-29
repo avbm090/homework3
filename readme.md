@@ -25,11 +25,11 @@ El sistema está diseñado para ser modular, eficiente y escalable, utilizando p
   
 - **`/jsons/`**: Carpeta que contiene los informes y resultados de las consultas hechas desde la API, tanto de reportes generados como de consultas por fecha o por sala. Estos archivos se guardan en formato **JSON** para persistir la información de manera estructurada. **Esto también se muestra de manera excepcional a fin de mostrar el labor realizado en la homework**.
 
-- **`/logs/`**: Carpeta donde se almacenan lso registros generados por la aplicación. Genera un registro en formatos .txt. Tipos: 'INFO' para eventos informativos, 'WARNING' para advertencias y 'ERROR' para situaciones que requieren corrección.
+- **`/logs/`**: Carpeta donde se almacenan lso registros generados por la aplicación. Genera un registro en formatos .txt. Tipos: 'INFO' para eventos informativos, 'WARNING' para advertencias y 'ERROR' para situaciones que requieren corrección. **Estos archivos se muestran por vez excepcional**
 
 - **`/reportes/`**: Carpeta que contiene las clases responsables de generar los reportes. Los reportes se implementan utilizando una combinación de los patrones **Factory** y **Strategy**.
 
-- **`/modelos/`**: Contiene las clases que representan las entidades principales del dominio (en este caso, logs). Cada clase encapsula los atributos de los logs. **Estos archivos se muestran por vez excepcional**
+- **`/modelos/`**: Contiene las clases que representan las entidades principales del dominio (en este caso, logs). Cada clase encapsula los atributos de los logs.
 
 - **`/tests/`**: Contiene scripts para realizar pruebas del sistema, en este caso para medición de rendimiento general y posible análisisd e cuellos de botella (se utilizó profiling). Los registros de las pruebas se guardan en formato **texto** en esta carpeta.
 
