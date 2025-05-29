@@ -35,7 +35,7 @@ El sistema está diseñado para ser modular, eficiente y escalable, utilizando p
 
 - **`/validador/`**: Implementa el validador de los logs para rastrear posibles cceldas con valores nulos, esto es externo al main y a la API.
 
-**`/homework3/`**(raíz del proyecto): 
+Archivos principales en **`/homework3/`**: 
 - *`API.py`*: Script que implementa una API para realizar consultas de registros por salas y rango de fechas, esta opción se agregó como un plus, y funciona de manera paralela al main. Por falta de tiempo, solo se hicieron estos dos endpoints mencionados.
    - Consultas por salas: La consulta por sala utiliza el método GET, ya que sólo recupera datos sin modificar el estado del servidor.
    - Consultas entre rango de fechas: La consulta por rango de fechas utiliza el método POST, porque se envía un JSON con parámetros específicos (el rango de fechas) para realizar la búsqueda.
