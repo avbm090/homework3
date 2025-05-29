@@ -34,27 +34,38 @@ El sistema está diseñado para ser modular, eficiente y escalable, utilizando p
 - **`/validador/`**: Implementa el validador de los logs para rastrear posibles cceldas con valores nulos, esto es externo al main y a la API.
 
 **`/raíz del proyecto/`**: 
-- *`API.py`*: Script que implementa una API para realizar consultas de registros por salas y rango de fechas, esta opción se agregó como un plus y funciona de manera paralela al main. Por falta de tiempo, solo se hicieron estos dos endpoints mencionados.
-   - Consultas por salas utiliza el método get, esto es porque se quieren recuperar los datos sin modificar el estado del servidor.
-   - Consultas entre rango de fechas utiliza un método post, dado que es necesario enviar un json con parámetros específicos para la consulta (en este caso, el rango de fechas para la búsqueda)
-- *`Main.py`*: Contiene la estructura principal para la interacción con el usuario, el diseño es simple ys e visualiza por consola. Permite seleccionar el tipo de informe que se desea crear y también la posibilidad de realizar dos tipos de consultas.
-  - En este archivo primero se cargan las variables de entorno, después se parsea la tabla de la bbdd (en este caso el archivo de la tarea), luego, se genera una instancia de la clase Cache (con el archivo ya parseado). Luego, aparece el menú por consola. Cabe aclarar que para cad auna de las opciones siempre se recurre al caché en memoria primero.
-      - Opción 1: Trae el informe de cantidad de tipos de estados por sala, utilizando el método ReporteFactory.crear_reporte() de Factory, una vez instanciado, se aplica el método .generar() de strategy.Para el tipo de informe seleccionado, strategy utiliza AlertasCriticas(Strategy), es decir una clase que hereda de la calse abstracta generar(). En resumen, se utiliza factory para crear los objetos nuevos  (los informes) teniendo en cuenta el método (acá es donde se combina con strategy) para el tipo de reporte seleccionado.
-      - Opción 2: Similar a la opción 1, pero cuando se instancia generar() se utiliza internamente AlertasCriticas(Strategy) para el informe de cantidad e alertas críticas.
-      - Opción 3: Realiza una consulta de registros por sala.
-      - Opción 4: Realiza una consulta de registros por rango de fechas. El formato ingresado debe ser del tipo yyyy-mm-ddTHH:MM:SS.
+- *`API.py`*: Script que implementa una API para realizar consultas de registros por salas y rango de fechas, esta opción se agregó como un plus, y funciona de manera paralela al main. Por falta de tiempo, solo se hicieron estos dos endpoints mencionados.
+   - Consultas por salas: La consulta por sala utiliza el método GET, ya que sólo recupera datos sin modificar el estado del servidor.
+   - Consultas entre rango de fechas: La consulta por rango de fechas utiliza el método POST, porque se envía un JSON con parámetros específicos (el rango de fechas) para realizar la búsqueda.
+- **`Main.py`**: Contiene la estructura principal. Acá es donde se selecciona el tipo de informe a través de una interfaz por consola. Principalemnte lo que se hace en este archivo es:
+  1. **Cargar las variables de entorno**.
+  2. **Parsear la tabla de la base de datos** (en este caso, el archivo de la tarea).
+  3. **Generar una instancia de la clase `Cache`** con el archivo ya parseado.
+  4. **Desplegar el menú por consola** con las opciones para seleccionar el tipo de informe o consulta a realizar.
+  
+  Cabe aclarar que, para cada una de las opciones, siempre se recurre al **caché en memoria primero**. Es decir, la instancia del caché se crea una sola vez fuera del bucle principal (while) antes que el usuario 
+  seleccione alguna opción. Cuando el usuario elige una opción, recién ahí se carga el caché.
 
+  #### **Opciones del menú**:
+  - **Opción 1**: Trae el informe de cantidad de tipos de estados por sala, utilizando el método `ReporteFactory.crear_reporte()` del patrón **Factory**. Una vez instanciado el objeto, se aplica el método `.generar()` del patrón **Strategy**. Para el tipo de informe seleccionado, **Strategy** utiliza `EstadoSala(Strategy)`, es decir, una clase que implementa el método `generar()` de la clase abstracta.  
+    - En resumen, **Factory** se encarga de crear los objetos de reporte, y dependiendo del tipo de reporte seleccionado, el patrón **Strategy** define cómo se generará el informe, utilizando la lógica de `EstadoSala` para el informe de estados por sala.
+
+  - **Opción 2**: Similar a la opción 1, pero cuando se instancia el método `.generar()`, se utiliza internamente `AlertasCriticas(Strategy)` para el informe de cantidad de alertas críticas.
+
+  - **Opción 3**: Realiza una consulta de registros por sala, consultando el caché en memoria.
+
+  - **Opción 4**: Realiza una consulta de registros por rango de fechas. El formato ingresado debe ser del tipo `yyyy-mm-ddTHH:MM:SS`.
 ## Requisitos
 
-- **Python 3.7** o superior
-- Librerías:
+- **Python 3.7** en adelante
+- Requirements:
   - `fastapi` para crear la API.
   - `pydantic` para validación de datos.
   - `python-dotenv` para manejar variables de entorno.
   - `pandas` para el procesamiento de datos.
   - `uvicorn` como servidor para la API.
 
-Para instalar las librerías:
+Instalación de librerías:
 
-```bash
+En powershell o bash,
 pip install -r requirements.txt
