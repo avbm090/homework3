@@ -1,0 +1,31 @@
+# entorno virtual
+entorno/
+
+# .env
+*.env
+
+# los logs
+logs/
+
+# archivos compilados de python
+__pycache__/
+*.pyc
+
+# archivos generados por IDE's
+.idea/
+.vscode/
+
+# archivos de configuración de PyCharm
+*.iml
+
+# archivos temporales y de respaldo
+*.log
+*.bak
+*.swp
+*.swm
+
+# carpeta data y jsons
+data/logs_ambientales_ecowatch.xlsx
+!data/
+/jsons
+

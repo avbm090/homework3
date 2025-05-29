@@ -1,0 +1,7 @@
+fastapi
+pydantic
+python-dotenv
+pandas
+uvicorn
+cProfile
+pstats
