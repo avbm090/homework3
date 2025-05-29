@@ -1,0 +1,7 @@
+2025-05-27 21:06:55,034 - INFO - archivo csv cargado.
+2025-05-27 21:07:00,040 - INFO - reporte seleccionado: estado por sala.
+2025-05-27 21:07:03,560 - INFO - creando el reporte: estado por sala
+2025-05-27 21:07:03,562 - INFO - sala 'Sala_3': estado 'INFO con 130 logs '
+2025-05-27 21:07:03,562 - INFO - sala 'Sala_3': estado 'WARNING con 42 logs '
+2025-05-27 21:07:03,563 - INFO - sala 'Sala_3': estado 'ERROR con 20 logs '
+2025-05-27 21:07:03,563 - INFO - reporte de estado por sala generado correctamente.
