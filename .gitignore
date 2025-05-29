@@ -27,5 +27,5 @@ __pycache__/
 # carpeta data y jsons
 data/logs_ambientales_ecowatch.xlsx
 !data/
-##/jsons
+/jsons
 
