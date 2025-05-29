@@ -29,7 +29,7 @@ El sistema está diseñado para ser modular, eficiente y escalable, utilizando p
 
 - **`/reportes/`**: Carpeta que contiene las clases responsables de generar los reportes. Los reportes se implementan utilizando una combinación de los patrones **Factory** y **Strategy**.
 
-- **`/modelos/`**: Contiene las clases que representan las entidades principales del dominio (en este caso, logs). Cada clase encapsula los atributos de los logs.
+- **`/modelos/`**: Contiene las clases que representan las entidades principales del dominio (en este caso, logs). Cada clase encapsula los atributos de los logs. **Estos archivos se muestran por vez excepcional**
 
 - **`/tests/`**: Contiene scripts para realizar pruebas del sistema, en este caso para medición de rendimiento general y posible análisisd e cuellos de botella (se utilizó profiling). Los registros de las pruebas se guardan en formato **texto** en esta carpeta.
 
